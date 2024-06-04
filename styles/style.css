@@ -1,23 +1,35 @@
-html {
-	display: flex;
-	justify-content: center;
-}
 body {
-	max-width: 360px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	margin: 0;
+	background-color: #1e1e1e;
+	font-family: 'Inter', 'Arial', sans-serif;
+	font-weight: 400;
 	color: #f5f5f5;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+blockquote {
+	margin: 0;
+	padding: 0;
+}
+
 .content-section {
 	width: 360px;
 	box-sizing: border-box;
+	margin: auto;
 }
 .content-section_theme_dark {
 	background-color: #131313;
 }
 .content-section_theme_bright {
 	background-color: #fee42a;
+	color: #131313;
 }
 .header {
 	padding: 24px 20px;
@@ -25,45 +37,42 @@ body {
 	justify-content: space-between;
 }
 .header__logo {
+	display: block;
 	width: 79px;
 }
 .header__logo-image {
 	cursor: pointer;
+	width: 100%;
 }
-
-.header__menu-item {
-	margin-bottom: 12px;
-}
-.header__menu-item:last-child {
-	margin-bottom: 0;
+.header__menu-list {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	list-style: none;
+	font-size: 16px;
+	font-weight: 400;
 }
 
 .header__menu-link {
 	color: #f5f5f5;
-	font-size: 16px;
-	font-weight: 400;
 	cursor: pointer;
-	text-decoration: none;
-	border-bottom: 1.2px solid #f5f5f5;
 }
 .header__menu-link_active {
-	/* text-decoration: none; */
-	border-bottom: none;
+	text-decoration: none;
 }
 
 .cover {
-	min-height: 221px;
 	padding: 0 20px 30px;
 	background-image: url('../images/cover.svg');
 	background-repeat: no-repeat;
 	background-size: 95% auto;
-	background-position: 20px;
+	background-position: right center;
 }
 .cover__title {
-	font-family: 'EB Garamond';
+	font-family: 'EB Garamond', serif;
 	font-weight: 400;
 	font-size: 72px;
-	line-height: 1.1;
+	line-height: 1;
 }
 .accent-span {
 	display: block;
@@ -91,43 +100,45 @@ body {
 	font-size: 16px;
 	font-weight: 400;
 }
+.intro__data {
+	white-space: nowrap;
+}
 
-.intro__main-text > p {
+.intro__main-text {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
 	font-size: 16px;
 	font-weight: 400;
-	margin-bottom: 24px;
 	line-height: 21.6px;
-}
-.intro__main-text > p:last-child {
-	margin-bottom: 0;
 }
 
 .reasons {
 	padding: 40px 20px 39px;
-}
-.content-section__subtitle,
-.content-section__introduction,
-.content-section__list-item {
 	color: #131313;
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
 }
+
 .content-section__subtitle {
 	font-family: 'EB Garamond';
 	font-weight: 400;
 	font-size: 28px;
-	margin: 0 0 32px;
 }
 .content-section__introduction {
 	line-height: 27px;
 	font-size: 20px;
-	margin: 0 0 32px;
 }
 .content-section__list-item {
 	font-size: 16px;
 	line-height: 21.6px;
-	margin: 0 0 16px;
 }
-.content-section__list-item:last-child {
-	margin: 0;
+.content-section__list {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	padding-left: 16px;
 }
 .content-section__list-accent {
 	font-weight: 700;
@@ -135,38 +146,44 @@ body {
 
 .how-to {
 	padding: 40px 20px 60px;
-}
-.content-section__subtitle_white,
-.content-section__introduction_white {
 	color: #f5f5f5;
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+}
+
+.card__author-photo,
+.card__author-name {
+	margin: 0 0 8px;
 }
 
 .card {
 	border-radius: 30px;
 	padding: 20px;
-	margin: 0 0 32px;
 }
-.card:last-child {
-	margin-bottom: 0;
-}
-.card__author {
+
+.card__list {
 	display: flex;
 	flex-direction: column;
-	padding: 0 0 8px;
+	gap: 32px;
 }
+
 .card__author-photo {
 	width: 100px;
-	padding: 0 0 8px;
 }
 .card__author-name {
 	font-size: 16px;
 	font-weight: 700;
 }
+.card__content {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
 .card__title {
 	font-family: 'EB Garamond';
 	font-weight: 400;
 	font-size: 22px;
-	margin: 0 0 8px;
 }
 .card__text {
 	font-size: 16px;
@@ -174,14 +191,12 @@ body {
 }
 .card_them_dark {
 	background-color: #343434;
-	color: #f5f5f5;
 }
 .card_them_bright {
 	background-color: #fee42a;
 	color: #131313;
 }
 .footer {
-	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	padding: 20px;
@@ -193,13 +208,10 @@ body {
 }
 .footer__links {
 	display: flex;
+	gap: 16px;
+	list-style: none;
 }
-.footer__links-item {
-	margin-right: 16px;
-}
-.footer__links-item:last-child {
-	margin-right: 0;
-}
+
 .footer__links-link {
 	text-decoration: none;
 	color: #f5f5f5;
